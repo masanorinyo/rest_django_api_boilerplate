@@ -1,20 +1,12 @@
-from snippets.models import Snippet
 from django.contrib.auth.models import User 
-from snippets.serializers import SnippetSerializer, UserSerializer
-from snippets.permissions import IsOwnerOrReadOnly
+from resources.snippets.models import Snippet
+from resources.snippets.permissions import IsOwnerOrReadOnly
+from .serializers import SnippetSerializer
 from rest_framework import permissions
 from rest_framework import renderers
 from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
-
-class UserViewSet(viewsets.ReadOnlyModelViewSet):
-  """
-  This viewset automatically provides `list` and `detail` actions.
-  """
-  queryset = User.objects.all()
-  serializer_class = UserSerializer
-
 
 class SnippetViewSet(viewsets.ModelViewSet):
   """

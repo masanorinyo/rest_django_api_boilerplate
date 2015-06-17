@@ -4,9 +4,9 @@ from resources.snippets.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
 
 
 class SnippetSerializer(serializers.ModelSerializer):
-  owner = serializers.StringRelatedField(source='owner.username')
-  # highlight = serializers.StringRelatedField()
+  owner = serializers.ReadOnlyField(source='owner.username')
+  # highlight = serializers.HyperlinkedIdentityField(view_name='snippet-highlight', format='html')
 
   class Meta:
     model = Snippet
-    fields = ('owner', 'title', 'code', 'linenos', 'language', 'style')
+    fields = ('url', 'highlight', 'owner', 'code', 'linenos', 'style')

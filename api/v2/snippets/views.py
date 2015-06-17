@@ -7,8 +7,6 @@ from rest_framework import renderers
 from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
-import logging
-logger = logging.getLogger(__name__)
 
 class SnippetViewSet(viewsets.ModelViewSet):
   """
@@ -19,7 +17,8 @@ class SnippetViewSet(viewsets.ModelViewSet):
   """
   queryset = Snippet.objects.all()
   serializer_class = SnippetSerializer 
-  # permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
+  permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
+
 
   @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
   def highlight(self, request, *args, **kwargs):

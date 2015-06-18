@@ -10,12 +10,6 @@ from rest_framework.decorators import detail_route
 import logging
 logger = logging.getLogger(__name__)
 
-
-# class SnippetApi():
-#   def get(self, request, *args, **kwargs):
-#     return self.list(request, *args, **kwargs)
-
-
 class SnippetViewSet(viewsets.ModelViewSet):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer 

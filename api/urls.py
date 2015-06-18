@@ -1,4 +1,4 @@
-from django.conf.urls import *
+from django.conf.urls import include, url, patterns
 
 urlpatterns = patterns('',
   # default version needs to be always the most recent API urls 

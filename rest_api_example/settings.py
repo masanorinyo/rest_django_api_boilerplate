@@ -38,13 +38,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "rest_framework",
-    "resources.snippets",
-    "resources.users",
-    "api"
+    'resources.snippets',
+    'resources.users',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'subdomains.middleware.SubdomainURLRoutingMiddleware',# this needs to before CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -55,7 +55,15 @@ MIDDLEWARE_CLASSES = (
     'rest_api_example.middleware.api.VersionSwitchMiddleware',
 )
 
-ROOT_URLCONF = 'rest_api_example.urls'
+ROOT_URLCONF = 'rest_api_example.urls.default'
+
+
+# subdomain setting
+# SUBDOMAIN_URLCONFS = {
+#     None : 'rest_api_example.urls.default',
+#     'api' : 'rest_api_example.urls.api',
+# }
+# SITE_ID=1
 
 REST_FRAMEWORK = {
   'PAGE_SIZE': 10,
@@ -121,3 +129,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+

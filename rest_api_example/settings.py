@@ -52,6 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'rest_api_example.middleware.api.VersionSwitchMiddleware',
 )
 
 ROOT_URLCONF = 'rest_api_example.urls'
@@ -59,10 +60,12 @@ ROOT_URLCONF = 'rest_api_example.urls'
 REST_FRAMEWORK = {
   'PAGE_SIZE': 10,
   'DEFAULT_RENDERER_CLASSES': (
-        'rest_api_example.custome_renderer.ApiV1',
-        'rest_api_example.custome_renderer.ApiV2',
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
+        # you will need to add another renderer class 
+        # if you would like to add another API version
+        'rest_api_example.middleware.renderer.ApiV2',
+        'rest_api_example.middleware.renderer.ApiV1',
     )
 }
 
@@ -81,49 +84,6 @@ TEMPLATES = [
         },
     },
 ]
-
-# LOGGING = {
-#   'version': 1,
-#   'disable_existing_loggers': False,
-#   'formatters': {
-#       'verbose': {
-#           'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
-#           'datefmt' : "%d/%b/%Y %H:%M:%S"
-#       },
-#       'simple': {
-#           'format': '%(levelname)s %(message)s'
-#       },
-#   },
-#   'handlers': {
-#       'console': {
-#         'level': 'DEBUG',
-#         'class': 'logging.StreamHandler',
-#         'formatter': 'simple'
-#         },
-#       'file': {
-#           'level': 'DEBUG',
-#           'class': 'logging.FileHandler',
-#           'filename': '.log',
-#           'formatter': 'verbose'
-#       },
-#   },
-#   'loggers': {
-#       'django': {
-#           'handlers':['file'],
-#           'propagate': True,
-#           'level':'DEBUG',
-#       },
-#       'rest_api_example': {
-#           'handlers': ['file'],
-#           'level': 'DEBUG',
-#       },
-#   }
-# }
-# if DEBUG:
-#     # make all loggers use the console.
-#     for logger in LOGGING['loggers']:
-#         LOGGING['loggers'][logger]['handlers'] = ['console']
-
 
 WSGI_APPLICATION = 'rest_api_example.wsgi.application'
 

@@ -4,4 +4,4 @@ class ApiV1(JSONRenderer):
   media_type = 'application/vdn.bespoke.v1+json' 
 
 class ApiV2(JSONRenderer):
-  media_type = 'application/vdn.bespoke.v2+json' 
+  media_type = 'application/vdn.bespoke.v2+json'

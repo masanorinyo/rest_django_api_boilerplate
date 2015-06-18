@@ -60,12 +60,13 @@ ROOT_URLCONF = 'rest_api_example.urls'
 REST_FRAMEWORK = {
   'PAGE_SIZE': 10,
   'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
         # you will need to add another renderer class 
         # if you would like to add another API version
+        # [WARNING]: the most recent API version needs to be placed before any other versions.
         'rest_api_example.middleware.renderer.ApiV2',
         'rest_api_example.middleware.renderer.ApiV1',
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
     )
 }
 

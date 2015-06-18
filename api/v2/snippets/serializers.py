@@ -5,8 +5,8 @@ from resources.snippets.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
 
 class SnippetSerializer(serializers.ModelSerializer):
   owner = serializers.StringRelatedField(source='owner.username')
-  highlight = serializers.StringRelatedField()
+  # highlight = serializers.StringRelatedField()
 
   class Meta:
     model = Snippet
-    fields = ('url', 'highlight', 'owner', 'title', 'code', 'linenos', 'language', 'style')
+    fields = ('owner', 'title', 'code', 'linenos', 'language', 'style')

@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     "rest_framework",
     "resources.snippets",
     "resources.users",
+    "api"
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,7 +58,6 @@ ROOT_URLCONF = 'rest_api_example.urls'
 
 REST_FRAMEWORK = {
   'PAGE_SIZE': 10,
-  'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning',
   'DEFAULT_RENDERER_CLASSES': (
         'rest_api_example.custome_renderer.ApiV1',
         'rest_api_example.custome_renderer.ApiV2',

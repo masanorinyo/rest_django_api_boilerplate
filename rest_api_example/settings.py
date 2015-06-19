@@ -67,7 +67,15 @@ REST_FRAMEWORK = {
         'rest_api_example.middlewares.renderer.ApiV1',
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
-    )
+  ),
+  'DEFAULT_PERMISSION_CLASSES': (
+      'rest_framework.permissions.IsAuthenticated',
+  ),
+  'DEFAULT_AUTHENTICATION_CLASSES': (
+      'rest_framework.authentication.SessionAuthentication',
+      'rest_framework.authentication.BasicAuthentication',
+      'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+  ),
 }
 
 TEMPLATES = [

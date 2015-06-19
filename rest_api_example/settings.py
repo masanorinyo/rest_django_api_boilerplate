@@ -43,8 +43,8 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'rest_api_example.middleware.subdomain.SubdomainMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    # 'subdomains.middleware.SubdomainURLRoutingMiddleware',# this needs to before CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -56,14 +56,6 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'rest_api_example.urls.default'
-
-
-# subdomain setting
-# SUBDOMAIN_URLCONFS = {
-#     None : 'rest_api_example.urls.default',
-#     'api' : 'rest_api_example.urls.api',
-# }
-# SITE_ID=1
 
 REST_FRAMEWORK = {
   'PAGE_SIZE': 10,

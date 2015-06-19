@@ -1,15 +1,9 @@
-import urlparse
-import logging
-logger = logging.getLogger(__name__)
-
-api_urls = ['tasks']  # the URLs you want to serve on your api subdomain
+from django.core.urlresolvers import set_urlconf
 
 class SubdomainMiddleware:
     def process_request(self, request):
         """
         Checks subdomain against requested URL.
-
-        Raises 404 or returns None
         """
         path = request.get_full_path()  # i.e. /tasks/
         root_url = path.split('/')[1]  # i.e. tasks
@@ -19,32 +13,17 @@ class SubdomainMiddleware:
             subdomain = domain_parts[0]
             if (subdomain.lower() == 'www'):
                 subdomain = None
-            domain = '.'.join(domain_parts[1:])
         else:
             subdomain = None
-            domain = request.get_host()
 
-        request.subdomain = subdomain  # i.e. 'api'
-        request.domain = domain  # i.e. 'example.com'
-
-        # Loosen restrictions when developing locally or running test suite
-        if not request.domain in ['localhost:8000', 'testserver']:
-            return  # allow request
-
-        if request.subdomain == "api" and root_url not in api_urls:
-            raise Http404()  # API subdomain, don't want to serve regular URLs
-        elif not subdomain and root_url in api_urls:
-            raise Http404()  # No subdomain or www, don't want to serve API URLs
-        else:  
-            raise Http404()  # Unexpected subdomain
-        return  # allow request  
-
-
-
-class GetSubdomainMiddleware:
-
-    def process_request(self, request):
-        bits = urlparse.urlsplit(request.META['HTTP_HOST'])[0].split('.')
-        if not( len(bits) == 3):
-            pass#Todo Raise an exception etc
-        request.subdomain = bits[0]
+        request.subdomain = subdomain  
+        
+        if request.subdomain == "api":
+            set_urlconf("rest_api_example.urls.api")
+            request.urlconf = "rest_api_example.urls.api"
+        elif request.subdomain == "admin":
+            set_urlconf("rest_api_example.urls.admin")
+            request.urlconf = "rest_api_example.urls.admin"
+        else:
+            set_urlconf("rest_api_example.urls.default")
+            request.urlconf = "rest_api_example.urls.default"

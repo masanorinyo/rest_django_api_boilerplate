@@ -1,6 +1,6 @@
 from django.core.urlresolvers import resolve
 from django.core.urlresolvers import reverse
-from rest_api_example.utility.version import get_api_version
+from rest_api_example.utilities.version import get_api_version
 import urlparse
 import logging
 logger = logging.getLogger(__name__)

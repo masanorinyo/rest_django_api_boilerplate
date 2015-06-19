@@ -43,7 +43,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'rest_api_example.middleware.subdomain.SubdomainMiddleware',
+    'rest_api_example.middlewares.subdomain.SubdomainMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -52,7 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'rest_api_example.middleware.api.VersionSwitchMiddleware',
+    'rest_api_example.middlewares.api.VersionSwitchMiddleware',
 )
 
 ROOT_URLCONF = 'rest_api_example.urls.default'
@@ -63,8 +63,8 @@ REST_FRAMEWORK = {
         # you will need to add another renderer class 
         # if you would like to add another API version
         # [WARNING]: the most recent API version needs to be placed before any other versions.
-        'rest_api_example.middleware.renderer.ApiV2',
-        'rest_api_example.middleware.renderer.ApiV1',
+        'rest_api_example.middlewares.renderer.ApiV2',
+        'rest_api_example.middlewares.renderer.ApiV1',
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     )

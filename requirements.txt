@@ -1,4 +1,7 @@
 django
 djangorestframework
 django-filter 
-django-subdomains
+{# django-subdomains #}
+django-extensions
+Werkzeug
+drf-json-api

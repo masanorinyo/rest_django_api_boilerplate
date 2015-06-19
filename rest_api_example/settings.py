@@ -63,8 +63,8 @@ REST_FRAMEWORK = {
         # you will need to add another renderer class 
         # if you would like to add another API version
         # [WARNING]: the most recent API version needs to be placed before any other versions.
-        'rest_api_example.middlewares.renderer.ApiV2',
-        'rest_api_example.middlewares.renderer.ApiV1',
+        'rest_api_example.middlewares.renderer.ApiV2Renderer',
+        'rest_api_example.middlewares.renderer.ApiV1Renderer',
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
   ),
@@ -104,7 +104,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'example_api',
-        "USER" : "postgres",
+        "USER" : "masa",
         # "PASSWORD" : "testtest",
         "PORT" : "5432"
     }

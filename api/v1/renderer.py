@@ -1,12 +1,19 @@
 from rest_framework.renderers import JSONRenderer
 
 class ApiRenderer(JSONRenderer):
-  media_type ='application/vdn.bespoke.v2+json'
+  
+  """
+  This class allows to modify json reponse structure
+  """
+
+  media_type ='application/vdn.bespoke.v2+json' # this represents the accepted content-type
+
+
   def render(self, data, accepted_media_type ='application/vdn.bespoke.v2+json', renderer_context=None):
 
     included = ""
 
-    data = {
+    response_data = {
       "links" : {
         "self" : ( data['url'] if hasattr(data, 'url') else None),
         "next" : ( data['next'] if hasattr(data, 'next') else None),
@@ -16,4 +23,4 @@ class ApiRenderer(JSONRenderer):
       "included" : data
     }
 
-    return super(ApiV2Renderer, self).render(data, accepted_media_type, renderer_context)
+    return super(ApiRenderer, self).render(response_data, accepted_media_type, renderer_context)

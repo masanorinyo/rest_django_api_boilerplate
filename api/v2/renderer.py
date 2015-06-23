@@ -15,6 +15,12 @@ class ApiRenderer(JSONRenderer):
     """
 
     if 'results' in data:
+      included_objs = []
+      for result in data['results']:
+        included_objs.append(result.pop('included',0))
+        
+      # make the dictionary unique 
+      included_objs = {v['id']:v for v in included_objs}.values()
       response_data = {
         "links" : {
           "self" : ( data['self'] if 'self' in data else None ),
@@ -23,9 +29,14 @@ class ApiRenderer(JSONRenderer):
           "last" : ( data['last'] if 'last' in data else None ),
         },
         "data" : data['results'],
-        "included" : ( data['included'] if 'included' in data['results'] else None )
+        "included" : included_objs
       }
+
     else:
       response_data = data
 
     return super(ApiRenderer, self).render(response_data, accepted_media_type, renderer_context)
+
+  def get_included_objs(objs):
+
+    return objs

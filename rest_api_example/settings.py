@@ -60,7 +60,7 @@ ROOT_URLCONF = 'rest_api_example.urls.default'
 
 REST_FRAMEWORK = {
   'PAGE_SIZE': 10,
-  # 'DEFAULT_PAGINATION_CLASS' : 'rest_api_example.custom.paginations.PaginationSerializer',
+  'DEFAULT_PAGINATION_CLASS' : 'rest_api_example.custom.paginations.PaginationSerializer',
   'DEFAULT_RENDERER_CLASSES': (
         # you will need to add another renderer class 
         # if you would like to add another API version

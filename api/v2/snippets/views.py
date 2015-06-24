@@ -11,12 +11,6 @@ logger = logging.getLogger(__name__)
 class SnippetViewSet(viewsets.ModelViewSet):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer 
-    
-
-    @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
-    def highlight(self, request, *args, **kwargs):
-      snippet = self.get_object()
-      return Response(snippet.highlighted)
 
     # The create() method of our serializer will now be passed an additional 'owner' field, along with the validated data from the request.
     def perform_create(self, serializer):

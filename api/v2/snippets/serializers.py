@@ -1,21 +1,28 @@
 from django.forms import widgets
 from rest_framework import serializers
 from resources.snippets.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
+from rest_framework.reverse import reverse
+from rest_api_example.custom  import utilities
+from api.v2 import factory
 
-
-class SnippetSerializer(serializers.ModelSerializer):
+class SnippetSerializer(serializers.HyperlinkedModelSerializer):
   attribute = serializers.SerializerMethodField()
   relationships = serializers.SerializerMethodField()
   included = serializers.SerializerMethodField()
+  links = serializers.SerializerMethodField()
   type = serializers.SerializerMethodField()
+  
   
   class Meta:
     model = Snippet
-    fields = ('id','type','attribute', 'relationships', 'included')
+    fields = ('id','type','attribute', 'relationships', 'links','included')
 
   def get_type(self, obj):
     return 'snippets'
-  
+
+  def get_links(self,obj):
+    return { "self" : utilities.get_url(self.context.get('request')) + str(obj.id)}
+
   def get_attribute(self, obj): 
     return {
       'code': obj.code, 
@@ -25,27 +32,51 @@ class SnippetSerializer(serializers.ModelSerializer):
     }
 
   def get_relationships(self, obj): 
-    return {
-      'owner': {
-        "links" :{
-          "self" : "test",
-          "related" : "test"
-        },
-        "data" : {
-          "type" : 'user',
-          "id" : obj.owner.id,
-        }
-      }
-    }
+    response_obj = []
+    request = self.context['request']
+    url = (utilities.get_url(request)) + str(obj.id)
+    query = request.QUERY_PARAMS['relationships'] if 'relationships' in request.QUERY_PARAMS else None
+      
+    if query:
+      queries = query.split('.')
+      if 'user' in queries:
+        response_obj.append(factory.create_relationship_obj(url, obj, 'user', obj.owner, 'owner'))
+      if 'test' in queries:
+        response_obj.append(factory.create_relationship_obj(url, obj, 'test', obj.owner))
+        
+    return response_obj
 
   def get_included(self,obj):
-    return {
-      "type": "user",
-      "id": obj.owner.id,
-      "attributes": {
-        "username": obj.owner.username,
-      },
-      "links": {
-        "self": "test"
-      }
-    }
+    
+    response_obj = []
+    request = self.context['request']
+    url = utilities.get_domain(request)
+    query = request.QUERY_PARAMS['included'] if 'included' in request.QUERY_PARAMS else None
+
+    if query:
+      queries = query.split('.')
+      if 'user' in queries:
+        response_obj.append({
+          "type": "user",
+          "id": obj.owner.id,
+          "attributes": {
+            "username": obj.owner.username,
+          },
+          "links": {
+            "self": url + "/users/" + str(obj.owner.id)
+          }
+        })
+      if 'test' in queries:
+        response_obj.append({
+          "type": "somethingelse",
+          "id": 2,
+          "attributes": {
+            "username": obj.owner.username,
+          },
+          "links": {
+            "self": url + "/somethingelse/" + str(obj.owner.id)
+          }
+        })
+        
+    return response_obj
+    

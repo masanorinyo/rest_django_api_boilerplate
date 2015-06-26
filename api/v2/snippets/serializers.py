@@ -21,7 +21,7 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
     return 'snippets'
 
   def get_links(self,obj):
-    return { "self" : utilities.get_url(self.context.get('request')) + str(obj.id)}
+    return { "self" : utilities.get_path(self.context.get('request'), 'snippets') + str(obj.id)}
 
   def get_attribute(self, obj): 
     return {

@@ -12,6 +12,11 @@ def get_domain(request):
   domain = request.META['HTTP_HOST']
   return http_protocol + "://" + domain
 
+def get_path(request, resource_name):
+  http_protocol = request.META['wsgi.url_scheme']
+  domain = request.META['HTTP_HOST']
+  return http_protocol + "://" + domain + '/' + resource_name + '/'
+
 def get_url(request):
   http_protocol = request.META['wsgi.url_scheme']
   domain = request.META['HTTP_HOST']

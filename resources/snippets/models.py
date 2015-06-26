@@ -18,7 +18,7 @@ class Snippet(models.Model):
   linenos = models.BooleanField(default=False)
   language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
   style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
-  owner = models.ForeignKey('auth.User', related_name='users')
+  user = models.ForeignKey('auth.User', related_name='users')
   highlighted = models.TextField()
 
   class Meta:

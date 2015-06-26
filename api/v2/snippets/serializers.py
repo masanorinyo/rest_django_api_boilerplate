@@ -15,7 +15,13 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
   
   class Meta:
     model = Snippet
-    fields = ('id','type','attribute', 'relationships', 'links','included')
+    fields = ('id','type','attribute', 'relationships', 'links','included', 'code','linenos','language','style')
+    extra_kwargs = {
+      'code': {'write_only': True},
+      'linenos': {'write_only': True},
+      'language': {'write_only': True},
+      'style': {'write_only': True},
+    }
 
   def get_type(self, obj):
     return 'snippets'

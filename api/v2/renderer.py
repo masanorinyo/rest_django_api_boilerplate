@@ -47,9 +47,9 @@ class ApiRenderer(JSONRenderer):
 
     else:
 
-      if not data['included']:
+      if 'included' in data:
         data = utilities.removekey(data,'included') 
-      if not data['relationships']:
+      if 'relationships' in data:
         data = utilities.removekey(data,'relationships') 
 
       response_data = data

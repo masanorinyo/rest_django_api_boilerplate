@@ -1,33 +1,45 @@
-from django.forms import widgets
 from rest_framework import serializers
 from resources.snippets.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
-from rest_framework.reverse import reverse
 from rest_api_example.custom  import utilities
-from api.v2 import factory
+from api.v2 import helpers
 
 class SnippetSerializer(serializers.HyperlinkedModelSerializer):
+  
+  # private variables
+  _resource_name = "snippets"
+  _related_models = [
+    { 'name': 'user'}, 
+    { 'name':'test', 'alternate' : 'owner'},
+  ]
+
+  # serialized values
   attribute = serializers.SerializerMethodField()
   relationships = serializers.SerializerMethodField()
   included = serializers.SerializerMethodField()
   links = serializers.SerializerMethodField()
   type = serializers.SerializerMethodField()
   
-  
   class Meta:
     model = Snippet
-    fields = ('id','type','attribute', 'relationships', 'links','included', 'code','linenos','language','style')
+    fields = (
+      'id',
+      'type',
+      'attribute', 
+      'relationships', 
+      'links',
+      'included', 
+      # the below are the model parameters
+      'code',
+      'linenos',
+      'language',
+      'style'
+    )
     extra_kwargs = {
       'code': {'write_only': True},
       'linenos': {'write_only': True},
       'language': {'write_only': True},
       'style': {'write_only': True},
     }
-
-  def get_type(self, obj):
-    return 'snippets'
-
-  def get_links(self,obj):
-    return { "self" : utilities.get_path(self.context.get('request'), 'snippets') + str(obj.id)}
 
   def get_attribute(self, obj): 
     return {
@@ -37,6 +49,12 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
       'style': obj.style
     }
 
+  def get_type(self, obj):
+    return self._resource_name
+
+  def get_links(self,obj):
+    return { "self" : utilities.get_path(self.context.get('request'), self._resource_name) + str(obj.id)}
+
   def get_relationships(self, obj): 
     response_obj = []
     request = self.context['request']
@@ -45,10 +63,11 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
       
     if query:
       queries = query.split(',')
-      if 'user' in queries:
-        response_obj.append(factory.create_relationship_obj(url, obj, 'user', obj.owner, 'owner'))
-      if 'test' in queries:
-        response_obj.append(factory.create_relationship_obj(url, obj, 'test', obj.owner))
+      for model in self._related_models:
+        print model['name']
+        if model['name'] in queries:
+          alternative_name = model['alternate'] if 'alternate' in model else None
+          response_obj.append(helpers.create_relationship_obj(url, obj, model['name'], obj.user, alternative_name ))
         
     return response_obj
 
@@ -64,12 +83,12 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
       if 'user' in queries:
         response_obj.append({
           "type": "user",
-          "id": obj.owner.id,
+          "id": obj.user.id,
           "attributes": {
-            "username": obj.owner.username,
+            "username": obj.user.username,
           },
           "links": {
-            "self": url + "/users/" + str(obj.owner.id)
+            "self": url + "/users/" + str(obj.user.id)
           }
         })
       if 'test' in queries:
@@ -77,10 +96,10 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
           "type": "somethingelse",
           "id": 2,
           "attributes": {
-            "username": obj.owner.username,
+            "username": obj.user.username,
           },
           "links": {
-            "self": url + "/somethingelse/" + str(obj.owner.id)
+            "self": url + "/somethingelse/" + str(obj.user.id)
           }
         })
         

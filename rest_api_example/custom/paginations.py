@@ -10,7 +10,7 @@ class PaginationSerializer(pagination.PageNumberPagination):
         path = self.request.META['PATH_INFO']
         url = http_protocol + "://" + domain + path
         current_page = self.request.build_absolute_uri() 
-        last_page = current_page + "?page=" + str(self.page.paginator.count / self.page_size + 1 ) # 1 stands for one page
+        last_page = url + "?page=" + str(self.page.paginator.count / self.page_size + 1 ) # 1 stands for one page
 
         return Response({
             'self' : current_page,

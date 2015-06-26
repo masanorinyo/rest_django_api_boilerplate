@@ -38,7 +38,7 @@ class ApiRenderer(JSONRenderer):
 
 
         # make the dictionary unique 
-        if included_objs[0]:
+        if included_objs and included_objs[0]:
           # make included_objs lists flat
           included_objs = [item for sublist in included_objs for item in sublist]
           # retrieve unique object from the included_objs list

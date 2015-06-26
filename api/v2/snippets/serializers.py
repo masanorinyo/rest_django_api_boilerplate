@@ -44,7 +44,7 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
     query = request.QUERY_PARAMS['relationships'] if 'relationships' in request.QUERY_PARAMS else None
       
     if query:
-      queries = query.split('.')
+      queries = query.split(',')
       if 'user' in queries:
         response_obj.append(factory.create_relationship_obj(url, obj, 'user', obj.owner, 'owner'))
       if 'test' in queries:
@@ -60,7 +60,7 @@ class SnippetSerializer(serializers.HyperlinkedModelSerializer):
     query = request.QUERY_PARAMS['included'] if 'included' in request.QUERY_PARAMS else None
 
     if query:
-      queries = query.split('.')
+      queries = query.split(',')
       if 'user' in queries:
         response_obj.append({
           "type": "user",

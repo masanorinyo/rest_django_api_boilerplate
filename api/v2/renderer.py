@@ -51,8 +51,10 @@ class ApiRenderer(JSONRenderer):
         if 'included' in data:
           data = utilities.removekey(data,'included') 
         if 'relationships' in data:
-          data = utilities.removekey(data,'relationships') 
-
-    response_data = data
+          data = utilities.removekey(data,'relationships')   
+        response_data = data
+    
+    else: 
+      response_data = data        
 
     return super(ApiRenderer, self).render(response_data, accepted_media_type, renderer_context)

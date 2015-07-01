@@ -1,3 +1,6 @@
+# [TODO]
+# make domain a global varialbe
+
 def get_api_version(url):
   if "application/vdn.bespoke" in url:
     try: 
@@ -10,12 +13,11 @@ def get_api_version(url):
 def get_domain(request):
   http_protocol = request.META['wsgi.url_scheme']
   domain = request.META['HTTP_HOST']
-  return http_protocol + "://" + domain
+  return "http://api.rest_api_example.dev/"
 
-def get_path(request, resource_name):
-  http_protocol = request.META['wsgi.url_scheme']
-  domain = request.META['HTTP_HOST']
-  return http_protocol + "://" + domain + '/' + resource_name + '/'
+def get_path(resource_name):
+  # make the domain environment variable
+  return "http://api.rest_api_example.dev/" + resource_name + '/'
 
 def get_url(request):
   http_protocol = request.META['wsgi.url_scheme']
@@ -28,3 +30,8 @@ def removekey(d, key):
   r = dict(d)
   del r[key]
   return r
+
+def remove_empty_keys(d):
+    for k in d.keys():
+        if not d[k]:
+            del d[k]

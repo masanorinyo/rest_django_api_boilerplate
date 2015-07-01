@@ -16,11 +16,15 @@ class ApiRenderer(JSONRenderer):
     """
 
     if data: 
+
+      utilities.remove_empty_keys(data)
+
       if 'results' in data:
         included_objs = []
         index = 0
         for result in data['results']:
-          included_objs.append(result.pop('included',0))
+
+          included_objs += result.pop('included') # 0
           if not data['results'][index]['relationships']:
             data['results'][index] = utilities.removekey(data['results'][index],'relationships') 
           index += 1
@@ -39,19 +43,19 @@ class ApiRenderer(JSONRenderer):
 
         # make the dictionary unique 
         if included_objs and included_objs[0]:
-          # make included_objs lists flat
-          included_objs = [item for sublist in included_objs for item in sublist]
           # retrieve unique object from the included_objs list
-          included_objs = {v['id'] and v['type']:v  for v in included_objs}.values()
-          response_data["included"] = included_objs
-        
+          included_objs = sorted(included_objs,key=lambda x:(x["type"],x["id"]))
+          seen_items = set()
+          filtered_dictlist = (x for x in included_objs if (x["id"],x["type"]) not in seen_items and not seen_items.add((x["id"],x["type"])))
+          included_objs = sorted(filtered_dictlist,key=lambda x:(x["type"],x["id"]))
+
+          for obj in included_objs:
+            utilities.remove_empty_keys(obj)
+
+          response_data["included"] = included_objs        
 
       else:
 
-        if 'included' in data:
-          data = utilities.removekey(data,'included') 
-        if 'relationships' in data:
-          data = utilities.removekey(data,'relationships')   
         response_data = data
     
     else: 

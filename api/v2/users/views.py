@@ -14,7 +14,17 @@ class UserViewSet(viewsets.ModelViewSet):
   queryset = User.objects.all()
   serializer_class = UserSerializer
 
-  @detail_route(methods=['post','get'])
+  @detail_route(methods=['get'])
+  def relationships(self, request, **kwargs):
+    
+    # needs to use global variable to get domain 
+    response_obj = {
+      "snippets": "http://api.rest_api_example.dev/users/1/relationships/snippets/"
+    }
+
+    return Response(response_obj)
+
+  @detail_route(methods=['get'])
   def snippet_relationships(self, request, **kwargs):
     user = self.get_object()
     queryset = Snippet.objects.filter(user=user.id);

@@ -2,8 +2,10 @@ from django.contrib.auth.models import User
 from .serializers import UserSerializer
 from rest_framework import renderers
 from rest_framework.response import Response
+from resources.snippets.models import Snippet
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
+from api.v2.snippets.serializers import SnippetSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
   """
@@ -12,5 +14,9 @@ class UserViewSet(viewsets.ModelViewSet):
   queryset = User.objects.all()
   serializer_class = UserSerializer
 
-  def perform_create(self, serializer):
-      serializer.save(user=self.request.user)
+  @detail_route(methods=['post','get'])
+  def snippet_relationships(self, request, **kwargs):
+    user = self.get_object()
+    queryset = Snippet.objects.filter(user=user.id);
+    serializer = SnippetSerializer(queryset, many=True).data
+    return Response(serializer)

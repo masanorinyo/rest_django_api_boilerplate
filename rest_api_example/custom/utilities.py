@@ -28,10 +28,16 @@ def get_url(request):
 
 def removekey(d, key):
   r = dict(d)
-  del r[key]
+  del r[key] 
   return r
 
 def remove_empty_keys(d):
+  if isinstance(d,  list):
+    for k in d:
+      for v in k:
+        if not k[v]:
+          del  k[v]
+  else:
     for k in d.keys():
         if not d[k]:
             del d[k]

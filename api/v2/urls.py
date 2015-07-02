@@ -1,10 +1,15 @@
 from django.conf.urls import *
-from snippets import views as SnippetView
-from users import views as UserView
+from users.views import UserViewSet
+from snippets.views import SnippetViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'users', UserView.UserViewSet)
-router.register(r'snippets', SnippetView.SnippetViewSet)
+router.register(r'users', UserViewSet)
+router.register(r'snippets', SnippetViewSet)
 
 urlpatterns = router.urls
+
+urlpatterns += [
+  url(r'^users/(?P<pk>[0-9]+)/relationships/snippets/$', UserViewSet.as_view({'get':'snippet_relationships'}), name="snippet_relationships"),
+  # url(r'^users/(?P<pk>[0-9]+)/relationships/snippets/$', UserViewSet.as_view({'get':'relationships'}), name="user-relationships"),
+]

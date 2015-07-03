@@ -6,6 +6,8 @@ from resources.snippets.models import Snippet
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
 from api.v2.snippets.serializers import SnippetSerializer
+from api.v2 import helpers
+from rest_api_example.custom  import utilities
 
 class UserViewSet(viewsets.ModelViewSet):
   """
@@ -28,5 +30,19 @@ class UserViewSet(viewsets.ModelViewSet):
   def snippet_relationships(self, request, **kwargs):
     user = self.get_object()
     queryset = Snippet.objects.filter(user=user.id);
-    serializer = SnippetSerializer(queryset, many=True).data
+    data = helpers.create_data( queryset , 'snippets' )
+    resource_name = "users"
+    return Response({
+      "links": {
+        "self" : (utilities.get_path(resource_name)) + str(user.id) + "/relationships/snippets/",
+        "related" : (utilities.get_path(resource_name)) + str(user.id) + "/snippets/",
+      },
+      "data":data,
+    }) 
+  
+  @detail_route(methods=['get'])
+  def snippet_included(self, request, **kwargs):
+    user = self.get_object()
+    queryset = Snippet.objects.filter(user=user.id);
+    serializer= SnippetSerializer(queryset, many=True ).data
     return Response(serializer)

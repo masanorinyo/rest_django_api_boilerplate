@@ -1,22 +1,24 @@
 import types
 
-def create_relationship_obj(url, obj, type, related_objs, obj_name=None):
-  obj_name = (obj_name if obj_name else type)
-  obj_data = 'test'
-
-  if not hasattr(related_objs, 'id'):
+def create_data(obj, type):
+  if not hasattr(obj, 'id'):
     obj_data = []
-    for related_obj in related_objs:
+    for related_obj in obj:
       obj_data.append({"id": related_obj.id, "type": type})
   else:  
-    obj_data = {"id":related_objs.id, "type":type}
+    obj_data = {"id":obj.id, "type":type}
+
+  return obj_data
+
+
+def create_relationship_obj(url, obj, type, data):
 
   return {
-    obj_name: {
+    type: {
       "links" :{
-        "self" : url + "/relationships/" + obj_name,
-        "related" : url + "/" + obj_name
+        "self" : url + "/relationships/" + type,
+        "related" : url + "/" + type
       },
-      "data" : obj_data
+      "data" : data
     }
   }

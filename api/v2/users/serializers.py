@@ -11,9 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     # private variables
     _resource_name = "users"
-    _related_models = [
-      { 'name': 'snippets'},
-    ]
+    _related_models = [{'name':'snippets'}]
 
     # serialized values
     attribute = serializers.SerializerMethodField()
@@ -62,12 +60,12 @@ class UserSerializer(serializers.ModelSerializer):
         query = request.QUERY_PARAMS['relationships'] if 'relationships' in request.QUERY_PARAMS else None
           
         if query:
-          queries = query.split(',')
+          queries = query.split('.')
           for model in self._related_models:
             if model['name'] in queries:
-              alternative_name = model['alternate'] if 'alternate' in model else None
-
-              response_obj.append(helpers.create_relationship_obj(url, obj, model['name'], obj.snippets.all(), alternative_name ))
+              type_name = model['alternate'] if 'alternate' in model else model['name']
+              data = helpers.create_data( obj.snippets.all() , type_name )
+              response_obj.append(helpers.create_relationship_obj(url, obj, type_name, data ))
           
       return response_obj
 
@@ -81,7 +79,7 @@ class UserSerializer(serializers.ModelSerializer):
         query = request.QUERY_PARAMS['included'] if 'included' in request.QUERY_PARAMS else None
         
         if query: 
-          queries = query.split(',')
+          queries = query.split('.')
           for model in self._related_models:
             queryset = Snippet.objects.all()
             if 'snippets' in queries:

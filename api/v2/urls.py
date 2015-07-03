@@ -12,5 +12,5 @@ urlpatterns = router.urls
 urlpatterns += [
   url(r'^users/(?P<pk>[0-9]+)/relationships/$', UserViewSet.as_view({'get':'relationships'}), name="relationships"),
   url(r'^users/(?P<pk>[0-9]+)/relationships/snippets/$', UserViewSet.as_view({'get':'snippet_relationships'}), name="snippet_relationships"),
-  # url(r'^users/(?P<pk>[0-9]+)/relationships/snippets/$', UserViewSet.as_view({'get':'relationships'}), name="user-relationships"),
+  url(r'^users/(?P<pk>[0-9]+)/snippets/$', UserViewSet.as_view({'get':'snippet_included'}), name="included"),
 ]

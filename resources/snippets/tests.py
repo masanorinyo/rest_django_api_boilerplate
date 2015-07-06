@@ -11,9 +11,7 @@ class SnippetTests(APITestCase):
     self.client = APIClient()
     self.user = User.objects.create_user('testuser', email='testuser@test.com', password='testing')
     self.user.save()
-    token = Token.objects.create(user=self.user)
-
-    token.save()
+    
 
   def test_create_snippet(self):
     """

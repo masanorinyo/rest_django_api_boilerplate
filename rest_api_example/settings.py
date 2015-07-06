@@ -42,7 +42,6 @@ INSTALLED_APPS = (
     'resources.snippets',
     'resources.users',
     'django_extensions',
-    # 'rest_framework.authtoken'
 )
 
 MIDDLEWARE_CLASSES = (

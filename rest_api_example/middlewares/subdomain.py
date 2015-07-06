@@ -20,10 +20,10 @@ class SubdomainMiddleware:
         
         request.subdomain = subdomain  # i.e. 'api'
         request.domain = domain  # i.e. 'example.com'
-
         request.subdomain = subdomain  
         
         # no re-setting urlconf when developing locally or running test suite, meaning the default urlconf in settings.py will be used
+        # [TEMP_FIX][TODO] - testserver should run on proxy server
         if not request.domain in ['testserver']:
 
             if request.subdomain == "api":

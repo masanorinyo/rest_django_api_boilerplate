@@ -15,6 +15,7 @@ class VersionSwitchMiddleware(object):
         else: 
           # when being accessed by testserver
           # get version info from path info
+          # [TEMP_FIX][TODO] : testserver needs to run on proxy server so that it can make a HTTP request, which can be stored in request object
           version = request.META['PATH_INFO'].split('/')[1]
         old_version = r.namespace.split(':')[-1]
         if r.namespace.startswith('api:') and version:

@@ -48,9 +48,8 @@ class ApiRenderer(JSONRenderer):
           seen_items = set()
           filtered_dictlist = (x for x in included_objs if (x["id"],x["type"]) not in seen_items and not seen_items.add((x["id"],x["type"])))
           included_objs = sorted(filtered_dictlist,key=lambda x:(x["type"],x["id"]))
-
-          # for obj in included_objs:
-          #   utilities.remove_empty_keys(obj)
+          for obj in included_objs:
+            utilities.remove_empty_keys(obj)
 
           response_data["included"] = included_objs        
 

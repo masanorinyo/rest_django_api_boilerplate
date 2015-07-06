@@ -68,7 +68,11 @@ class UserSerializer(serializers.ModelSerializer):
                 data = helpers.create_data( obj.snippets.all() , type_name )
                 response_obj.append(helpers.create_relationship_obj(url, obj, type_name, data ))
               else: 
-                response_obj.append({key:"There is no such related model"})
+                response_obj.append({
+                  key : {
+                    "error" : "There is no such related model"
+                  }
+                })
       
       return response_obj
 
@@ -83,13 +87,16 @@ class UserSerializer(serializers.ModelSerializer):
         
         if query: 
           queries = query.split('.')
-          for model in self._related_models:
-            queryset = Snippet.objects.all()
-            if 'snippets' in queries:
+          for key in queries:
+            if 'snippets' == key:
+              queryset = Snippet.objects.all()
               included_objs += SnippetSerializer(queryset, many=True ).data
               # included_objs += SnippetSerializer(queryset, many=True ).data
-
-      # if not included_obj:
-      #   included_objs = "There were no such related models"
+            else:
+              included_objs.append({
+                "id": None, 
+                "type": key,
+                "error": "There is no such related model"
+              })
 
       return included_objs

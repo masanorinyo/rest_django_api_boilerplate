@@ -2,6 +2,7 @@ django
 djangorestframework
 django-filter 
 {# django-subdomains #}
-django-extensions
+{# django-extensions #}
 Werkzeug
-drf-json-api
+{# https://github.com/jeffh/sniffer #}
+sniffer

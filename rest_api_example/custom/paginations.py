@@ -1,12 +1,13 @@
 from rest_framework import pagination
 from rest_framework.response import Response
+from django.conf import settings
 
 
 class PaginationSerializer(pagination.PageNumberPagination):
         
     def get_paginated_response(self, data):
         http_protocol = self.request.META['wsgi.url_scheme']
-        domain = "http://api.rest_api_example.dev"
+        domain = settings.APP_DOMAIN#"api.rest_api_example.dev"
         path = self.request.META['PATH_INFO']
         url = http_protocol + "://" + domain + path
         current_page = self.request.build_absolute_uri() 

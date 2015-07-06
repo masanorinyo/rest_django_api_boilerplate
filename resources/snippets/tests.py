@@ -16,17 +16,16 @@ class SnippetTests(APITestCase):
     token.save()
 
   def test_create_snippet(self):
-      """
-      Ensure we can create a new snippet object.
-      """    
-      url = reverse('api:v2:snippet-list')
-      
-      self.client.login(username='testuser', password='testing')      
-      # data = {'code': 'DabApps'}
-      response = self.client.get(url, format='json')
-      print "========== response data start ============"
-      print response
-      print "========== response data end  ============"
-      self.assertTrue(status.is_success(response.status_code))
-      # self.assertEqual(response.data, data)
-  
+    """
+    Ensure we can create a new snippet object.
+    """    
+    url = reverse('api:v2:snippet-list')
+    
+    self.client.login(username='testuser', password='testing')      
+    # data = {'code': 'DabApps'}
+    response = self.client.get(url, format='json')
+    print "========== response data start ============"
+    print response
+    print "========== response data end  ============"
+    self.assertTrue(status.is_success(response.status_code))
+    # self.assertEqual(response.data, data)

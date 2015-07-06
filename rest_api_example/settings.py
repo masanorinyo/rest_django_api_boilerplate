@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'resources.snippets',
     'resources.users',
     'django_extensions',
+    # 'rest_framework.authtoken'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,6 +59,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'rest_api_example.urls.api'
+
+APP_DOMAIN = 'api.rest_api_example.dev'
 
 REST_FRAMEWORK = {
   'PAGE_SIZE': 10,

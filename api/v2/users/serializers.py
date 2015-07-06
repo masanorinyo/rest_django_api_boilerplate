@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     # private variables
     _resource_name = "users"
-    _related_models = [{'name':'snippets'}]
+    _related_models = [{'name':'snippets','alternate':'test'}]
 
     # serialized values
     attribute = serializers.SerializerMethodField()
@@ -61,12 +61,15 @@ class UserSerializer(serializers.ModelSerializer):
           
         if query:
           queries = query.split('.')
-          for model in self._related_models:
-            if model['name'] in queries:
-              type_name = model['alternate'] if 'alternate' in model else model['name']
-              data = helpers.create_data( obj.snippets.all() , type_name )
-              response_obj.append(helpers.create_relationship_obj(url, obj, type_name, data ))
-          
+          for key in queries:
+            for model in self._related_models:
+              if key == model['name']:
+                type_name = model['alternate'] if 'alternate' in model else model['name']
+                data = helpers.create_data( obj.snippets.all() , type_name )
+                response_obj.append(helpers.create_relationship_obj(url, obj, type_name, data ))
+              else: 
+                response_obj.append({key:"There is no such related model"})
+      
       return response_obj
 
 
@@ -86,5 +89,7 @@ class UserSerializer(serializers.ModelSerializer):
               included_objs += SnippetSerializer(queryset, many=True ).data
               # included_objs += SnippetSerializer(queryset, many=True ).data
 
+      # if not included_obj:
+      #   included_objs = "There were no such related models"
 
       return included_objs

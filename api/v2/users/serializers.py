@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     # private variables
     _resource_name = "users"
-    _related_models = [{'name':'snippets','alternate':'test'}]
+    _related_models = [{'name':'snippets'}]
 
     # serialized values
     attribute = serializers.SerializerMethodField()

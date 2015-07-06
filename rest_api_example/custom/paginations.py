@@ -6,7 +6,7 @@ class PaginationSerializer(pagination.PageNumberPagination):
         
     def get_paginated_response(self, data):
         http_protocol = self.request.META['wsgi.url_scheme']
-        domain = self.request.META['HTTP_HOST']
+        domain = "http://api.rest_api_example.dev"
         path = self.request.META['PATH_INFO']
         url = http_protocol + "://" + domain + path
         current_page = self.request.build_absolute_uri() 

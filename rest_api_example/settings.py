@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'api',
     'resources.snippets',
     'resources.users',
+    'django_extensions',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,7 +57,7 @@ MIDDLEWARE_CLASSES = (
     'rest_api_example.middlewares.api.VersionSwitchMiddleware',
 )
 
-ROOT_URLCONF = 'rest_api_example.urls.default'
+ROOT_URLCONF = 'rest_api_example.urls.api'
 
 REST_FRAMEWORK = {
   'PAGE_SIZE': 10,

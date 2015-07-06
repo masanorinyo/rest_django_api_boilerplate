@@ -18,7 +18,7 @@ class ApiRenderer(JSONRenderer):
     if data: 
 
       # remove empty parameters
-      # utilities.remove_empty_keys(data)
+      utilities.remove_empty_keys(data)
 
       if 'results' in data:
         

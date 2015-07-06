@@ -25,10 +25,12 @@ class ApiRenderer(JSONRenderer):
         included_objs = []
         # for result in data['results']:
         result = data['results'][0]
-        relationships = result['relationships']
         included_objs += result.pop('included') # 0
-        if not data['results'][0]['relationships']:
-          data['results'][0] = utilities.removekey(data['results'][0],'relationships') 
+        index = 0
+        for result in data['results']:
+          if not data['results'][index]['relationships']:
+            utilities.remove_empty_keys(data['results'][index]) 
+          index += 1
           
         response_data = {
           "data" : data['results'],
@@ -48,8 +50,6 @@ class ApiRenderer(JSONRenderer):
           seen_items = set()
           filtered_dictlist = (x for x in included_objs if (x["id"],x["type"]) not in seen_items and not seen_items.add((x["id"],x["type"])))
           included_objs = sorted(filtered_dictlist,key=lambda x:(x["type"],x["id"]))
-          for obj in included_objs:
-            utilities.remove_empty_keys(obj)
 
           response_data["included"] = included_objs        
 

@@ -50,7 +50,7 @@ class SnippetSerializer(serializers.ModelSerializer):
     return self._resource_name
 
   def get_links(self,obj):
-    return { "self" : utilities.get_path(self._resource_name) + str(obj.id)}
+    return { "self" : utilities.get_path( self._resource_name ) + str(obj.id)}
 
   def get_relationships(self, obj): 
     return []

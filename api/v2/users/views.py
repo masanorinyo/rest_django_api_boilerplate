@@ -34,8 +34,8 @@ class UserViewSet(viewsets.ModelViewSet):
     resource_name = "users"
     return Response({
       "links": {
-        "self" : (utilities.get_path(resource_name)) + str(user.id) + "/relationships/snippets/",
-        "related" : (utilities.get_path(resource_name)) + str(user.id) + "/snippets/",
+        "self" : (utilities.get_path( resource_name )) + str(user.id) + "/relationships/snippets/",
+        "related" : (utilities.get_path( resource_name )) + str(user.id) + "/snippets/",
       },
       "data":data,
     }) 

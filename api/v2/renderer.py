@@ -23,11 +23,9 @@ class ApiRenderer(JSONRenderer):
       if 'results' in data:
         
         included_objs = []
-        # for result in data['results']:
-        result = data['results'][0]
-        included_objs += result.pop('included') # 0
         index = 0
         for result in data['results']:
+          included_objs = result.pop('included')
           if not data['results'][index]['relationships']:
             utilities.remove_empty_keys(data['results'][index]) 
           index += 1
@@ -44,7 +42,7 @@ class ApiRenderer(JSONRenderer):
 
 
         # make the dictionary unique 
-        if included_objs and included_objs[0]:
+        if included_objs:
           # retrieve unique object from the included_objs list
           included_objs = sorted(included_objs,key=lambda x:(x["type"],x["id"]))
           seen_items = set()

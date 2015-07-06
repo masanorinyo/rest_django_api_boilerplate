@@ -1,5 +1,4 @@
-# [TODO]
-# make domain a global varialbe
+from django.conf import settings
 
 def get_api_version(url):
   if "application/vdn.bespoke" in url:
@@ -11,19 +10,23 @@ def get_api_version(url):
     return False
 
 def get_domain(request):
-  http_protocol = request.META['wsgi.url_scheme']
-  domain = request.META['HTTP_HOST']
-  return "http://api.rest_api_example.dev/"
+  if 'wsgi.url_scheme' in request.META:
+    http_protocol = request.META['wsgi.url_scheme']
+  else:
+    http_protocol = "http"
+  return http_protocol + "://" + settings.APP_DOMAIN + "/"
 
 def get_path(resource_name):
-  # make the domain environment variable
-  return "http://api.rest_api_example.dev/" + resource_name + '/'
+  http_protocol = "http"
+  return http_protocol +"://" + settings.APP_DOMAIN + "/" + resource_name + '/'
 
 def get_url(request):
-  http_protocol = request.META['wsgi.url_scheme']
-  domain = request.META['HTTP_HOST']
+  if 'wsgi.url_scheme' in request.META:
+    http_protocol = request.META['wsgi.url_scheme']
+  else:
+    http_protocol = "http"
   path = request.META['PATH_INFO']
-  return http_protocol + "://" + domain + path
+  return http_protocol + "://" + settings.APP_DOMAIN + path
 
 
 def removekey(d, key):

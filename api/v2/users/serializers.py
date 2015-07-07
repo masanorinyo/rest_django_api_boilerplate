@@ -58,22 +58,11 @@ class UserSerializer(serializers.ModelSerializer):
         request = self.context['request']
         url = (utilities.get_url(request)) + str(obj.id)
         query = request.QUERY_PARAMS['relationships'] if 'relationships' in request.QUERY_PARAMS else None
+        for model in self._related_models:  
+          type_name = model['alternate'] if 'alternate' in model else model['name']
+          data = helpers.create_data( obj.snippets.all() , type_name )
+          response_obj.append(helpers.create_relationship_obj(url, obj, model['name'], data ))
           
-        if query:
-          queries = query.split('.')
-          for key in queries:
-            for model in self._related_models:
-              if key == model['name']:
-                type_name = model['alternate'] if 'alternate' in model else model['name']
-                data = helpers.create_data( obj.snippets.all() , type_name )
-                response_obj.append(helpers.create_relationship_obj(url, obj, type_name, data ))
-              else: 
-                response_obj.append({
-                  key : {
-                    "error" : "There is no such related model"
-                  }
-                })
-      
       return response_obj
 
 

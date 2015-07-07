@@ -1,7 +1,6 @@
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from models import Snippet
-from rest_framework.authtoken.models import Token
 from rest_framework import status
 from rest_framework.test import APITestCase, APIClient
 from rest_api_example.custom  import utilities

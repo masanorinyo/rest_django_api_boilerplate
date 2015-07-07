@@ -100,7 +100,7 @@ TEMPLATES = [
 ]
 
 FIXTURE_DIRS = (
-   'resources/fixtures',
+   'resources/**/',
 )
 
 

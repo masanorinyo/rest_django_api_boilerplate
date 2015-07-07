@@ -99,6 +99,11 @@ TEMPLATES = [
     },
 ]
 
+FIXTURE_DIRS = (
+   'resources/fixtures',
+)
+
+
 WSGI_APPLICATION = 'rest_api_example.wsgi.application'
 
 

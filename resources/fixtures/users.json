@@ -1,0 +1,20 @@
+[
+{
+    "fields": {
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2015-07-06T20:39:03.075Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$20000$WP7IyRAY2byi$fNqa5Snmw4peTsPJILEU2jNcBQa8c5WhWHkO6QMMFLM=",
+        "email": "admin@bespoke.is",
+        "date_joined": "2015-07-06T19:36:41.626Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+}
+]

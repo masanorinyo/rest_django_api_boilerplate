@@ -1,4 +1,5 @@
 from django.conf import settings
+import string, random
 
 def get_api_version(url):
   if "application/vdn.bespoke" in url:
@@ -44,3 +45,6 @@ def remove_empty_keys(d):
     for k in d.keys():
         if not d[k]:
             del d[k]
+
+def generate_random_strings(size=6, chars=string.ascii_uppercase + string.digits):
+  return ''.join(random.choice(chars) for _ in range(size))

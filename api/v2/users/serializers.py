@@ -56,7 +56,7 @@ class UserSerializer(serializers.ModelSerializer):
       response_obj = []
       if self.context:
         request = self.context['request']
-        url = (utilities.get_url(request)) + str(obj.id)
+        url = (utilities.get_path(self._resource_name)) + str(obj.id)
         query = request.QUERY_PARAMS['relationships'] if 'relationships' in request.QUERY_PARAMS else None
         for model in self._related_models:  
           type_name = model['alternate'] if 'alternate' in model else model['name']
@@ -71,11 +71,11 @@ class UserSerializer(serializers.ModelSerializer):
       included_objs = []
       if self.context:
         request = self.context['request']
-        url = (utilities.get_url(request)) + str(obj.id)
+        url = (utilities.get_path(self._resource_name)) + str(obj.id)
         query = request.QUERY_PARAMS['included'] if 'included' in request.QUERY_PARAMS else None
         
         if query: 
-          queries = query.split('.')
+          queries = query.split(',')
           for key in queries:
             if 'snippets' == key:
               queryset = Snippet.objects.all()

@@ -14,12 +14,10 @@ class ApiRenderer(JSONRenderer):
     """
     'data' represents the data returned by requested API end point
     """
-
     if data: 
 
       # remove empty parameters
       utilities.remove_empty_keys(data)
-
       if 'results' in data:
         
         included_objs = []
@@ -55,8 +53,16 @@ class ApiRenderer(JSONRenderer):
           response_data["included"] = included_objs        
 
       else:
+        
+        if "data" in data:
+          response_data = data
+        else:
+          response_data = {}
+          if "links" in data:
+            response_data['links'] = data.pop('links')
+          response_data['data'] = data
+          
 
-        response_data = data
     
     else: 
       response_data = data        

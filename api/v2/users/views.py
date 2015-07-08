@@ -45,4 +45,13 @@ class UserViewSet(viewsets.ModelViewSet):
     user = self.get_object()
     queryset = Snippet.objects.filter(user=user.id);
     serializer= SnippetSerializer(queryset, many=True ).data
-    return Response(serializer)
+    resource_name = "users"
+    # removing empty arrays
+    for result in serializer:
+      utilities.remove_empty_keys(result) 
+    return Response({
+      "links" : {
+        "self" : (utilities.get_path( resource_name )) + str(user.id) + "/snippets/",
+      },
+      "data" : serializer,
+    })

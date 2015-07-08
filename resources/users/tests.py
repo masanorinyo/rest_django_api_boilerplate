@@ -30,8 +30,8 @@ class UserTests_v2(APITestCase):
     """    
     url = reverse('api:v2:user-detail', args=[1])
     response = json.loads(self.client.get(url).content)
-    self.assertEqual(response['id'], 1)
-    self.assertEqual(response['type'], 'users')
+    self.assertEqual(response['data']['id'], 1)
+    self.assertEqual(response['data']['type'], 'users')
     
   def test_show_related_snippets(self):
     """
@@ -39,7 +39,7 @@ class UserTests_v2(APITestCase):
     """    
     url = reverse('api:v2:user-detail', args=[1])
     response = json.loads(self.client.get(url, format='json').content)
-    relationships = response['relationships'][0]
+    relationships = response['data']['relationships'][0]
     for key, value in relationships.iteritems():
       self.assertEqual(key, "snippets")
       self.assertEqual(len(value['data']), 10)
@@ -51,7 +51,7 @@ class UserTests_v2(APITestCase):
     url = reverse('api:v2:user-detail', args=[1])
     url = url + "?included=snippets"
     response = json.loads(self.client.get(url, format='json').content)
-    included_obj =  response['included'][0]
+    included_obj =  response['data']['included'][0]
     self.assertEqual(included_obj["id"], 1)
     self.assertEqual(included_obj["type"], "snippets")
     self.assertEqual(included_obj["attribute"]["code"], "test")
@@ -72,5 +72,5 @@ class UserTests_v2(APITestCase):
     """    
     url = reverse('api:v2:snippet_included', args=[1])
     response = json.loads(self.client.get(url, format='json').content)
-    self.assertEqual(response[0]['attribute']['code'], 'test')
-    self.assertEqual(len(response), 10)
+    self.assertEqual(response['data'][0]['attribute']['code'], 'test')
+    self.assertEqual(len(response['data']), 10)

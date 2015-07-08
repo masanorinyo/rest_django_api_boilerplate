@@ -40,9 +40,9 @@ class SnippetTests_v2(APITestCase):
     """    
     url = reverse('api:v2:snippet-detail', args=[1])
     response = json.loads(self.client.get(url).content)
-    self.assertEqual(response['id'], 1)
-    self.assertEqual(response['type'], 'snippets')
-    self.assertEqual(response['attribute']['code'], 'test')
+    self.assertEqual(response['data']['id'], 1)
+    self.assertEqual(response['data']['type'], 'snippets')
+    self.assertEqual(response['data']['attribute']['code'], 'test')
 
 
   def test_put_snippet(self):
@@ -54,8 +54,8 @@ class SnippetTests_v2(APITestCase):
     url = reverse('api:v2:snippet-detail', args=[1])
     prev_response = json.loads(self.client.get(url, format='json').content)
     after_response = json.loads(self.client.put(url, updated_data , format='json').content)
-    self.assertEqual(prev_response['attribute']['code'], "test")
-    self.assertEqual(updated_data['code'], after_response['attribute']['code'])
+    self.assertEqual(prev_response['data']['attribute']['code'], "test")
+    self.assertEqual(updated_data['code'], after_response['data']['attribute']['code'])
 
   def test_delete_snippet(self):
     """

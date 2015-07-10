@@ -1,3 +1,7 @@
+"""
+testing testing
+"""
+
 from django.core.urlresolvers import set_urlconf
 
 class SubdomainMiddleware:

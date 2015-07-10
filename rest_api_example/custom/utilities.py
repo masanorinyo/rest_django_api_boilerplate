@@ -1,3 +1,7 @@
+"""
+testing testing
+"""
+
 from django.conf import settings
 import string, random
 

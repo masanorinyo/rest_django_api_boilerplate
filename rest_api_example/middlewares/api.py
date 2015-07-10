@@ -1,10 +1,13 @@
+"""
+testing testing
+"""
+
 from django.core.urlresolvers import resolve
 from django.core.urlresolvers import reverse
 from rest_api_example.custom  import utilities
 import urlparse
 import logging
 logger = logging.getLogger(__name__)
-
 
 class VersionSwitchMiddleware(object):
 

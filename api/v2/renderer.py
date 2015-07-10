@@ -1,12 +1,12 @@
+"""
+This class allows to modify json reponse structure
+"""
+
 from rest_framework.renderers import JSONRenderer
 from rest_api_example.custom  import utilities
 
 class ApiRenderer(JSONRenderer):
   
-  """
-  This class allows to modify json reponse structure
-  """
-
   media_type ='application/vdn.bespoke.v2+json' # this represents the accepted content-type
 
 

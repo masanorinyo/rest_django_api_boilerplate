@@ -1,7 +1,5 @@
-#DJANGO RESTful API - Example
-#Developer - Getting Started
+# DJANGO RESTful API - Example
 
----
 ## API structure
 
 The applicatiom is based on  <a href=http://jsonapi.org/>JSON API</a>

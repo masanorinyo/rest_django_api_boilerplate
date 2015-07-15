@@ -1,15 +1,16 @@
 from rest_framework import serializers
 from resources.garment.models import Garment
+from resources.pattern.models import Pattern
 from rest_api_example.custom  import utilities
+from api.v2.patterns.serializers import PatternSerializer
 from api.v2 import helpers
-
-
+test = []
 class GarmentSerializer(serializers.ModelSerializer):
     
 
     # private variables
     _resource_name = "garments"
-
+    _related_models = [{'name':'patterns'}]
     # serialized values
     attribute = serializers.SerializerMethodField()
     relationships = serializers.SerializerMethodField()
@@ -87,8 +88,43 @@ class GarmentSerializer(serializers.ModelSerializer):
         'hasTexture': obj.hasTexture,
       }
     
+    
     def get_relationships(self, obj): 
-      return []
+      # print Garment.objects.all()
+      response_obj = []
+      if self.context:
+        request = self.context['request']
+        url = (utilities.get_path(self._resource_name)) + str(obj.id)
+        query = request.QUERY_PARAMS['relationships'] if 'relationships' in request.QUERY_PARAMS else None
+        for model in self._related_models:  
+          type_name = model['alternate'] if 'alternate' in model else model['name']
+          data = helpers.create_data( obj.pattern , type_name )
+          response_obj.append(helpers.create_relationship_obj(url, obj, model['name'], data ))
+          
+      return response_obj
 
-    def get_included(self,obj):
-      return []
+
+    def get_included(self, obj):
+      
+      included_objs = []
+      if self.context:
+        request = self.context['request']
+        url = (utilities.get_path(self._resource_name)) + str(obj.id)
+        query = request.QUERY_PARAMS['included'] if 'included' in request.QUERY_PARAMS else None
+        
+        if query: 
+          queries = query.split(',')
+          for key in queries:
+            if 'pattern' == key or 'patterns' == key:
+              
+              queryset = Pattern.objects.all()
+              included_objs += PatternSerializer(queryset, many=True ).data
+            else:
+              included_objs.append({
+                "id": None, 
+                "model_type": key,
+                "error": "There is no such related model"
+              })
+
+      return included_objs
+    

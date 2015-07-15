@@ -2,7 +2,6 @@ from rest_framework import serializers
 from resources.pattern.models import Pattern
 from resources.garment.models import Garment
 from rest_api_example.custom  import utilities
-from api.v2.garments.serializers import GarmentSerializer
 from api.v2 import helpers
 
 
@@ -61,40 +60,12 @@ class PatternSerializer(serializers.ModelSerializer):
       }
 
     def get_relationships(self, obj): 
-      # print Garment.objects.all()
       response_obj = []
-      if self.context:
-        request = self.context['request']
-        url = (utilities.get_path(self._resource_name)) + str(obj.id)
-        query = request.QUERY_PARAMS['relationships'] if 'relationships' in request.QUERY_PARAMS else None
-        for model in self._related_models:  
-          type_name = model['alternate'] if 'alternate' in model else model['name']
-          data = helpers.create_data( Garment.objects.filter(pattern=obj.id) , type_name )
-          response_obj.append(helpers.create_relationship_obj(url, obj, model['name'], data ))
-          
       return response_obj
 
 
     def get_included(self, obj):
       
       included_objs = []
-      if self.context:
-        request = self.context['request']
-        url = (utilities.get_path(self._resource_name)) + str(obj.id)
-        query = request.QUERY_PARAMS['included'] if 'included' in request.QUERY_PARAMS else None
-        
-        if query: 
-          queries = query.split(',')
-          for key in queries:
-            if 'pattern' == key or 'patterns' == key:
-              queryset = Garment.objects.all()
-              included_objs += GarmentSerializer(queryset, many=True ).data
-            else:
-              included_objs.append({
-                "id": None, 
-                "model_type": key,
-                "error": "There is no such related model"
-              })
-
       return included_objs
     

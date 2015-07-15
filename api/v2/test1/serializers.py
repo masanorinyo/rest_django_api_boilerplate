@@ -1,51 +1,46 @@
 from rest_framework import serializers
-from resources.snippets.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
 from rest_api_example.custom  import utilities
+from resources.test1.models  import Test1
+from resources.test2.models  import Test2
 from api.v2 import helpers
 
-class SnippetSerializer(serializers.ModelSerializer):
+class Test1Serializer(serializers.ModelSerializer):
   
   # private variables
-  _resource_name = "snippets"
+  _resource_name = "test1"
+  _related_models = [{'name':'test2'}]
 
   # serialized values
   attribute = serializers.SerializerMethodField()
+  links = serializers.SerializerMethodField()
+  model_type = serializers.SerializerMethodField()
   relationships = serializers.SerializerMethodField()
   included = serializers.SerializerMethodField()
-  links = serializers.SerializerMethodField()
-  type = serializers.SerializerMethodField()
   
   class Meta:
-    model = Snippet
+    model = Test1
     fields = (
       'id',
-      'type',
+      'model_type',
       'attribute', 
-      'relationships', 
       'links',
+      'relationships', 
       'included', 
       # the below are the model parameters
-      'code',
-      'linenos',
-      'language',
-      'style',
+      'test2',
+      'version'
     )
     extra_kwargs = {
-      'code': {'write_only': True},
-      'linenos': {'write_only': True},
-      'language': {'write_only': True},
-      'style': {'write_only': True},
+      'test2': {'write_only': True},
+      'version': {'write_only': True},
     }
 
   def get_attribute(self, obj): 
     return {
-      'code': obj.code, 
-      'linenos': obj.linenos,
-      'language': obj.language, 
-      'style': obj.style
+      'version': obj.version, 
     }
 
-  def get_type(self, obj):
+  def get_model_type(self, obj):
     return self._resource_name
 
   def get_links(self,obj):
@@ -54,6 +49,6 @@ class SnippetSerializer(serializers.ModelSerializer):
   def get_relationships(self, obj): 
     return []
 
-  def get_included(self,obj):
+
+  def get_included(self, obj):
     return []
-    

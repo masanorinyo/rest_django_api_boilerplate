@@ -38,10 +38,15 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_extensions',
     'api',
+    # resource apps go here
     'resources.snippets',
     'resources.users',
-    'django_extensions',
+    'resources.garment',
+    'resources.pattern',
+    'resources.test1',
+    'resources.test2',
 )
 
 MIDDLEWARE_CLASSES = (

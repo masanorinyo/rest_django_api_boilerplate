@@ -183,6 +183,9 @@ The example code structure is based on 4 components
         # add django module in there
         django-admin.py startapp {resource name} ./resources/{resource name}
 
+        # once you create an app, add the app to INSTALLED_APPS in settings.py
+    
+
 ##### Interaction with Database
 
 - How to migrate database
@@ -210,7 +213,7 @@ The example code structure is based on 4 components
 
 
 
-###-Testing
+## Testing
 
 - Each test script is located under app folder. You can run all the test scripts by running the following command.
 

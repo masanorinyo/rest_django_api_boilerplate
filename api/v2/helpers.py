@@ -4,9 +4,9 @@ def create_data(obj, type):
   if not hasattr(obj, 'id'):
     obj_data = []
     for related_obj in obj:
-      obj_data.append({"id": related_obj.id, "type": type})
+      obj_data.append({"id": related_obj.id, "model_type": type})
   else:  
-    obj_data = {"id":obj.id, "type":type}
+    obj_data = {"id":obj.id, "model_type":type}
 
   return obj_data
 

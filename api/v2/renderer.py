@@ -42,10 +42,10 @@ class ApiRenderer(JSONRenderer):
         # make the dictionary unique 
         if included_objs:
           # retrieve unique object from the included_objs list
-          included_objs = sorted(included_objs,key=lambda x:(x["type"],x["id"]))
+          included_objs = sorted(included_objs,key=lambda x:(x["model_type"],x["id"]))
           seen_items = set()
-          filtered_dictlist = (x for x in included_objs if (x["id"],x["type"]) not in seen_items and not seen_items.add((x["id"],x["type"])))
-          included_objs = sorted(filtered_dictlist,key=lambda x:(x["type"],x["id"]))
+          filtered_dictlist = (x for x in included_objs if (x["id"],x["model_type"]) not in seen_items and not seen_items.add((x["id"],x["model_type"])))
+          included_objs = sorted(filtered_dictlist,key=lambda x:(x["model_type"],x["id"]))
 
           for obj in included_objs:
             utilities.remove_empty_keys(obj)

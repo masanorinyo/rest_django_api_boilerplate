@@ -5,6 +5,9 @@ This class allows to modify json reponse structure
 from rest_framework.renderers import JSONRenderer
 from rest_api_example.custom  import utilities
 
+
+# [TODO] - add comments on each logics
+# [TODO] - extract each logics into a class
 class ApiRenderer(JSONRenderer):
   
   media_type ='application/vdn.bespoke.v2+json' # this represents the accepted content-type
@@ -39,6 +42,7 @@ class ApiRenderer(JSONRenderer):
         }
 
 
+        # [TODO] - do this in views
         # make the dictionary unique 
         if included_objs:
           # retrieve unique object from the included_objs list

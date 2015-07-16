@@ -67,7 +67,7 @@ ROOT_URLCONF = 'rest_api_example.urls.api'
 APP_DOMAIN = 'api.rest_api_example.dev'
 
 REST_FRAMEWORK = {
-  'PAGE_SIZE': 10,
+  'PAGE_SIZE': 9,
   'DEFAULT_PAGINATION_CLASS' : 'rest_api_example.custom.paginations.PaginationSerializer',
   'DEFAULT_RENDERER_CLASSES': (
         # you will need to add another renderer class 

@@ -4,7 +4,7 @@ from resources.pattern.models import Pattern
 from rest_api_example.custom  import utilities
 from api.v2.patterns.serializers import PatternSerializer
 from api.v2 import helpers
-test = []
+
 class GarmentSerializer(serializers.ModelSerializer):
     
 
@@ -88,9 +88,8 @@ class GarmentSerializer(serializers.ModelSerializer):
         'hasTexture': obj.hasTexture,
       }
     
-    
+    # [TODO] - try to make it more concise
     def get_relationships(self, obj): 
-      # print Garment.objects.all()
       response_obj = []
       if self.context:
         request = self.context['request']
@@ -100,10 +99,9 @@ class GarmentSerializer(serializers.ModelSerializer):
           type_name = model['alternate'] if 'alternate' in model else model['name']
           data = helpers.create_data( obj.pattern , type_name )
           response_obj.append(helpers.create_relationship_obj(url, obj, model['name'], data ))
-          
       return response_obj
 
-
+    # [TODO] - try to make it more concise
     def get_included(self, obj):
       
       included_objs = []
@@ -116,9 +114,7 @@ class GarmentSerializer(serializers.ModelSerializer):
           queries = query.split(',')
           for key in queries:
             if 'pattern' == key or 'patterns' == key:
-              
-              queryset = Pattern.objects.all()
-              included_objs += PatternSerializer(queryset, many=True ).data
+              included_objs = GarmentSerializer.included
             else:
               included_objs.append({
                 "id": None, 

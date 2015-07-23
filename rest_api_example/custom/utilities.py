@@ -52,3 +52,6 @@ def remove_empty_keys(d):
 
 def generate_random_strings(size=6, chars=string.ascii_uppercase + string.digits):
   return ''.join(random.choice(chars) for _ in range(size))
+
+def convert_to_list(string):
+  return string.replace("[", "").replace("]","").replace("'","").replace('"',"").split(",")

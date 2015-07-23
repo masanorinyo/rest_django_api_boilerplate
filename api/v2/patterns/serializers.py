@@ -3,7 +3,7 @@ from resources.pattern.models import Pattern
 from resources.garment.models import Garment
 from rest_api_example.custom  import utilities
 from api.v2 import helpers
-
+import json
 
 class PatternSerializer(serializers.ModelSerializer):
     
@@ -54,7 +54,7 @@ class PatternSerializer(serializers.ModelSerializer):
       return {
         'status' : obj.status,
         'subtype' : obj.subtype,
-        'panels' : obj.panels,
+        'panels' : utilities.convert_to_list(obj.panels),
         'type' : obj.type,
         'version' : obj.version,
       }

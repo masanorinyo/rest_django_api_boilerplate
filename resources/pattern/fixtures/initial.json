@@ -1,0 +1,1874 @@
+[
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "oxfords",
+      "panels": [
+        "left_triangle",
+        "collar_band_panel",
+        "left_sleeve",
+        "yoke",
+        "front_left",
+        "new_back",
+        "left_placket",
+        "left_cuff",
+        "collar_panel"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "tracing_shirts",
+      "panels": [
+        "TShirt_back_20150130_51975",
+        "TShirt_front_20150130_51817",
+        "TShirt_sleeve_20150130_52070"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "four-panel",
+      "panels": [
+        "sleeve_left",
+        "bodice_back",
+        "bodice_front"
+      ],
+      "type": "t-shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "rebecca-minkoff",
+      "panels": [
+        "left_side",
+        "front_center",
+        "front_top_right",
+        "back-side_loop",
+        "front_loop",
+        "back_left"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "light",
+      "panels": [
+        "left_sleeve",
+        "right_side",
+        "front",
+        "collar_panel",
+        "back"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back",
+        "front"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "sizzle2",
+      "panels": [
+        "front_dress_right_1",
+        "front_dress_ruffle_left",
+        "back_dress_panel",
+        "front_dress_right",
+        "front_dress_ruffle_right"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "four-panel",
+      "panels": [
+        "Sleeve_20150226_04339",
+        "back",
+        "front"
+      ],
+      "type": "t-shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "theory",
+      "panels": [
+        "dress_back_top",
+        "dress_front",
+        "dress_back_bottom"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "panel_20150701_55861",
+        "panel_20150701_57311"
+      ],
+      "type": "test",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "khakis",
+      "panels": [
+        "front_left_pocket_outer",
+        "front_left_pocket_inner",
+        "front_right",
+        "back_left",
+        "belt",
+        "front_left"
+      ],
+      "type": "pants",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "cropped",
+      "panels": [
+        "left_sleeve",
+        "front",
+        "front_collar",
+        "back_collar",
+        "back"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "tee",
+      "panels": [
+        "left",
+        "front"
+      ],
+      "type": "shirt",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "longsleeve_2",
+      "panels": [
+        "longsleeve_v1_20150212_49813",
+        "e2eBack_20150205_41508",
+        "e2eFront_20150205_41414"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "elizabeth_james",
+      "panels": [
+        "elizabeth-james_front_bodice_20150313_38336",
+        "elizabeth-james_back_mesh_20150313_39507",
+        "elizabeth-james_front_mesh_20150313_38533",
+        "elizabeth-james_back_bodice_20150313_43068",
+        "elizabeth-james_front_skirt_20150313_42255",
+        "elizabeth-james_back_skirt_20150313_42955",
+        "elizabeth-james_front_false-hem_20150313_39317",
+        "elizabeth-james_back_false-hem_20150313_39680"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "four-panel",
+      "panels": [
+        "back",
+        "left",
+        "front"
+      ],
+      "type": "t-shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "none",
+      "panels": [],
+      "type": "none",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "happiness",
+      "panels": [
+        "Happines_front_20150128_62279",
+        "Happiness_collar_20150128_63108",
+        "Happiness_back_20150128_63019"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "khakis",
+      "panels": [
+        "front_left",
+        "back_left",
+        "belt"
+      ],
+      "type": "pants",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "two-panel",
+      "panels": [
+        "back",
+        "front"
+      ],
+      "type": "t-shirts",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "Front"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "oxfords",
+      "panels": [
+        "left_triangle",
+        "collar_band_panel",
+        "left_sleeve",
+        "yoke",
+        "front_left",
+        "new_back",
+        "left_placket",
+        "left_cuff",
+        "collar_panel"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "front"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "front"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "none",
+      "panels": [],
+      "type": "none",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "four-panel",
+      "panels": [
+        "Sleeve_20150226_04339",
+        "back",
+        "front"
+      ],
+      "type": "t-shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "jeans",
+      "panels": [
+        "front_left",
+        "back_left",
+        "belt"
+      ],
+      "type": "pants",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": null,
+      "subtype": "old",
+      "panels": [],
+      "type": "old",
+      "version": null
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "L_Sleeve",
+        "back",
+        "Front"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "none",
+      "panels": [],
+      "type": "none",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "rebecca-minkoff",
+      "panels": [
+        "left_side",
+        "front_center",
+        "front_top_right",
+        "back-side_loop",
+        "front_loop",
+        "back_left"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "oxfords",
+      "panels": [
+        "left_triangle",
+        "collar_band_panel",
+        "left_sleeve",
+        "yoke",
+        "front_left",
+        "new_back",
+        "left_placket",
+        "left_cuff",
+        "collar_panel"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "blq_1",
+      "panels": [
+        "dress_blq_basiq_racer_back_dress_20150317_50764"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "polos",
+      "panels": [
+        "sleeve_end_left",
+        "back",
+        "front",
+        "bottom_collar",
+        "placket",
+        "left",
+        "collar"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "light",
+      "panels": [
+        "left_sleeve",
+        "right_side",
+        "front",
+        "collar_panel",
+        "back"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "saylor",
+      "panels": [
+        "back_top_shoulder_lower",
+        "front_skirt_bottom",
+        "back_top_shoulder_upper",
+        "front_top_side",
+        "back_top_center",
+        "front_skirt",
+        "back_skirt",
+        "front_top_shoulder",
+        "front_top_center",
+        "back_skirt_left"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "athleisure",
+      "panels": [
+        "front_left_inner",
+        "front_left_pocket_outer",
+        "cuff_right",
+        "back_left_pocket",
+        "front_left",
+        "back_left",
+        "front_left_outer_pocket",
+        "front_left_inner_pocket",
+        "belt"
+      ],
+      "type": "pants",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "wayf",
+      "panels": [
+        "back_dress",
+        "back_shoulder",
+        "front_shoulder_lower",
+        "dress_front",
+        "front_shoulder_upper"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "polos",
+      "panels": [
+        "back",
+        "sleeve_end_left",
+        "front",
+        "bottom_collar",
+        "placket",
+        "left",
+        "collar"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "deep_v_XXL",
+      "panels": [
+        "Sleeve_20150226_04339",
+        "e2eBack_20150205_41508",
+        "e2eFront_20150205_41414"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "light",
+      "panels": [
+        "left_sleeve",
+        "right_side",
+        "collar_panel",
+        "front",
+        "back"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "polos",
+      "panels": [
+        "back",
+        "sleeve_end_left",
+        "front",
+        "bottom_collar",
+        "placket",
+        "left",
+        "collar"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "athleisure",
+      "panels": [
+        "cuff_left",
+        "back",
+        "hood",
+        "sleeve_left",
+        "front_right",
+        "belt"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "four-panel",
+      "panels": [
+        "back",
+        "left",
+        "front"
+      ],
+      "type": "t-shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "khakis",
+      "panels": [
+        "front_left_pocket_outer",
+        "front_left_pocket_inner",
+        "front_right",
+        "back_left",
+        "belt",
+        "front_left"
+      ],
+      "type": "pants",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "panel_20150707_56605"
+      ],
+      "type": "test",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "tracing_shirts",
+      "panels": [
+        "TShirt_back_20150130_51975",
+        "TShirt_front_20150130_51817",
+        "TShirt_sleeve_20150130_52070"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "six-panel",
+      "panels": [
+        "back",
+        "left",
+        "front",
+        "left_cuff"
+      ],
+      "type": "t-shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_pants_panel",
+        "front"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "light",
+      "panels": [
+        "left_sleeve",
+        "right_side",
+        "collar_panel",
+        "front",
+        "back"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [],
+      "type": "test",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "polos",
+      "panels": [
+        "sleeve_end_left",
+        "back",
+        "front",
+        "bottom_collar",
+        "placket",
+        "left",
+        "collar"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "four-panel",
+      "panels": [
+        "Sleeve_20150226_04339",
+        "e2eBack_20150205_41508",
+        "e2eFront_20150205_41414"
+      ],
+      "type": "t-shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "raglan_longsleeve",
+      "panels": [
+        "raglan_longsleeve_sleeve_v1_20150220_43920",
+        "raglan_back_v1_20150220_44239",
+        "raglan_front_v1_20150220_44154"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back",
+        "front"
+      ],
+      "type": "test",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "front_1",
+        "back",
+        "back_1",
+        "front"
+      ],
+      "type": "test",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "tracing_shirts",
+      "panels": [
+        "TShirt_back_20150130_51975",
+        "TShirt_front_20150130_51817",
+        "TShirt_sleeve_20150130_52070"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "front_dress_ruffle_right",
+        "front_dress_ruffle_left",
+        "back_dress_panel",
+        "front_dress_right",
+        "front_dress_right_1"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "athleisure",
+      "panels": [
+        "cuff_left",
+        "back",
+        "hood",
+        "sleeve_left",
+        "front_right",
+        "belt"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "two_panel",
+      "panels": [
+        "two_panel_back_20150213_72214",
+        "two_panel_front_20150213_71672"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "sizzle2",
+      "panels": [
+        "front_dress_right_1",
+        "front_dress_ruffle_left",
+        "back_dress_panel",
+        "front_dress_right",
+        "front_dress_ruffle_right"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "polos",
+      "panels": [
+        "sleeve_end_left",
+        "back",
+        "front",
+        "bottom_collar",
+        "placket",
+        "left",
+        "collar"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "khakis",
+      "panels": [
+        "front_left_pocket_outer",
+        "front_left_pocket_inner",
+        "front_right",
+        "back_left",
+        "belt",
+        "front_left"
+      ],
+      "type": "pants",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "light",
+      "panels": [
+        "left_sleeve",
+        "right_side",
+        "collar_panel",
+        "front",
+        "back"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "athleisure",
+      "panels": [
+        "front_left_inner",
+        "front_left_pocket_outer",
+        "cuff_right",
+        "back_left_pocket",
+        "front_left",
+        "back_left",
+        "belt"
+      ],
+      "type": "pants",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "khakis",
+      "panels": [
+        "front_left_pocket_outer",
+        "front_left_pocket_inner",
+        "front_right",
+        "back_left",
+        "belt",
+        "front_left"
+      ],
+      "type": "pants",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "long_sleeve_v1",
+      "panels": [
+        "LongSleeve_20150202_68062",
+        "TShirt_front_20150130_51817",
+        "TShirt_back_20150130_51975"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "tracing_shirts",
+      "panels": [
+        "TShirt_back_20150130_51975",
+        "TShirt_front_20150130_51817",
+        "TShirt_sleeve_20150130_52070"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "eight-sixty",
+      "panels": [
+        "front_center",
+        "front_skirt_upper",
+        "back_skirt_lower",
+        "front_skirt_lower",
+        "back_top_left",
+        "front_side",
+        "back_skirt_upper"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "athleisure",
+      "panels": [
+        "cuff_left",
+        "back",
+        "hood",
+        "sleeve_left",
+        "front_right",
+        "belt"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "panel_20150707_38659",
+        "sleeve"
+      ],
+      "type": "test",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "light",
+      "panels": [
+        "left_sleeve",
+        "right_side",
+        "front",
+        "collar_panel",
+        "back"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": null,
+      "subtype": "old",
+      "panels": [],
+      "type": "old",
+      "version": null
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "panel_20150417_74375",
+        "panel_20150417_74087",
+        "panel_20150417_74215",
+        "panel_20150417_74286",
+        "panel_20150417_74112",
+        "panel_20150417_75081"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "tshirt",
+      "panels": [
+        "Sleeve_20150226_04339",
+        "e2eBack_20150205_41508",
+        "e2eFront_20150205_41414"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "khakis",
+      "panels": [
+        "front_left_pocket_outer",
+        "front_left_pocket_inner",
+        "front_right",
+        "back_left",
+        "belt",
+        "front_left"
+      ],
+      "type": "pants",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "four-panel",
+      "panels": [
+        "Sleeve_20150226_04339",
+        "e2eBack_20150205_41508",
+        "e2eFront_20150205_41414"
+      ],
+      "type": "t-shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": null,
+      "subtype": "old",
+      "panels": [],
+      "type": "old",
+      "version": null
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "two-panel",
+      "panels": [
+        "back",
+        "front"
+      ],
+      "type": "t-shirts",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "romper",
+      "panels": [
+        "sleeve_left",
+        "front_right_pants",
+        "front_right",
+        "back_top",
+        "back_left"
+      ],
+      "type": "shorts",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "none",
+      "panels": [],
+      "type": "none",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "oxfords",
+      "panels": [
+        "back",
+        "left_triangle",
+        "collar_band_panel",
+        "left_sleeve",
+        "yoke",
+        "front_left",
+        "left_placket",
+        "left_cuff",
+        "collar_panel"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "longsleeve_3",
+      "panels": [
+        "longsleeve_v1_20150212_49813",
+        "TShirt_front_20150130_51817",
+        "TShirt_back_20150130_51975"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "sizzle2",
+      "panels": [
+        "front_dress_ruffle_right",
+        "front_dress_ruffle_left",
+        "back_dress_panel",
+        "front_dress_right",
+        "front_dress_right_1"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "theory",
+      "panels": [
+        "back_bottom_right",
+        "front_top_left",
+        "front_bottom_left",
+        "back_top_right"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "sweaters",
+      "panels": [
+        "back",
+        "sleeve_1",
+        "collar_2",
+        "front",
+        "collar_1",
+        "side_1"
+      ],
+      "type": "cm_pink",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "rebecca-minkoff",
+      "panels": [
+        "left_side",
+        "front_center",
+        "front_top_right",
+        "back-side_loop",
+        "front_loop",
+        "back_left"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "raglan_longsleeve_2",
+      "panels": [
+        "raglan_back_v1_20150220_48172",
+        "raglan_front_v1_20150220_48057",
+        "raglan_longsleeve_sleeve_v1_20150220_43920"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "eight-sixty",
+      "panels": [
+        "front_center",
+        "front_skirt_upper",
+        "back_skirt_lower",
+        "front_skirt_lower",
+        "back_top_left",
+        "front_side",
+        "back_skirt_upper"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_left"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "sizzle2",
+      "panels": [
+        "front_dress_ruffle_right",
+        "front_dress_ruffle_left",
+        "back_dress_panel",
+        "front_dress_right",
+        "front_dress_right_1"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "front"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "khakis",
+      "panels": [
+        "front_left_pocket_outer",
+        "front_left_pocket_inner",
+        "front_right",
+        "back_left",
+        "belt",
+        "front_left"
+      ],
+      "type": "pants",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back",
+        "front"
+      ],
+      "type": "test",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "light",
+      "panels": [
+        "left_sleeve",
+        "right_side",
+        "front",
+        "collar_panel",
+        "back"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "panel_20150702_48561",
+        "panel_20150702_48458"
+      ],
+      "type": "test",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "panel_20150703_39245",
+        "panel_20150703_40595"
+      ],
+      "type": "test",
+      "version": "3.0.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "sizzle",
+      "panels": [
+        "back_dress_top",
+        "right_sleeve",
+        "front_dress_top_1",
+        "back_dress_bottom",
+        "front_dress_bottom"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "rebecca-minkoff",
+      "panels": [
+        "left_side",
+        "front_center",
+        "front_top_right",
+        "back-side_loop",
+        "front_loop",
+        "back_left"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "light",
+      "panels": [
+        "side_left",
+        "sleeve_right",
+        "back",
+        "front",
+        "back_collar_1",
+        "front_collar_1"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "theory",
+      "panels": [
+        "back_bottom_right",
+        "front_top_left",
+        "front_bottom_left",
+        "back_top_right"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": null,
+      "subtype": "old",
+      "panels": [],
+      "type": "old",
+      "version": null
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "light",
+      "panels": [
+        "left_sleeve",
+        "right_side",
+        "front",
+        "collar_panel",
+        "back"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": null,
+      "subtype": "old",
+      "panels": [],
+      "type": "old",
+      "version": null
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "front"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "cropped",
+      "panels": [
+        "left_sleeve",
+        "front",
+        "back"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front_shirt_panel"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "tshirt",
+      "panels": [
+        "Sleeve_20150226_04339",
+        "e2eBack_20150205_41508",
+        "e2eFront_20150205_41414"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "light",
+      "panels": [
+        "back",
+        "front",
+        "left_sleeve",
+        "right_side",
+        "left",
+        "collar_panel"
+      ],
+      "type": "sweaters",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "rebecca-minkoff",
+      "panels": [
+        "left_side",
+        "front_center",
+        "front_top_right",
+        "back-side_loop",
+        "front_loop",
+        "back_left"
+      ],
+      "type": "dresses",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "polos",
+      "panels": [
+        "sleeve_end_left",
+        "back",
+        "front",
+        "bottom_collar",
+        "placket",
+        "left",
+        "collar"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "polos",
+      "panels": [
+        "sleeve_end_left",
+        "back",
+        "front",
+        "bottom_collar",
+        "placket",
+        "left",
+        "collar"
+      ],
+      "type": "shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "front_1",
+        "sleeve_left",
+        "back"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "six-panel",
+      "panels": [
+        "back",
+        "left",
+        "front",
+        "left_cuff"
+      ],
+      "type": "t-shirts",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "back_shirt_panel",
+        "front"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  },
+  {
+    "model": "pattern.pattern",
+    "fields": {
+      "status": "pending",
+      "subtype": "test",
+      "panels": [
+        "panel_20150513_85834"
+      ],
+      "type": "test",
+      "version": "2.2.0"
+    }
+  }
+]

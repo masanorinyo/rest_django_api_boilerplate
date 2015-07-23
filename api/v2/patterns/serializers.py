@@ -3,7 +3,6 @@ from resources.pattern.models import Pattern
 from resources.garment.models import Garment
 from rest_api_example.custom  import utilities
 from api.v2 import helpers
-import json
 
 class PatternSerializer(serializers.ModelSerializer):
     
@@ -51,10 +50,13 @@ class PatternSerializer(serializers.ModelSerializer):
       return { "self" : utilities.get_path( self._resource_name ) + str(obj.id)}
 
     def get_attribute(self, obj): 
+
+      panels = utilities.convert_to_list(obj.panels)
+    
       return {
         'status' : obj.status,
         'subtype' : obj.subtype,
-        'panels' : utilities.convert_to_list(obj.panels),
+        'panels' : panels,
         'type' : obj.type,
         'version' : obj.version,
       }

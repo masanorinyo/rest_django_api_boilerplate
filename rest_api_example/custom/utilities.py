@@ -3,7 +3,7 @@ testing testing
 """
 
 from django.conf import settings
-import string, random
+import string, random, json
 
 def get_api_version(url):
   if "application/vdn.bespoke" in url:
@@ -53,5 +53,16 @@ def remove_empty_keys(d):
 def generate_random_strings(size=6, chars=string.ascii_uppercase + string.digits):
   return ''.join(random.choice(chars) for _ in range(size))
 
-def convert_to_list(string):
-  return string.replace("[", "").replace("]","").replace("'","").replace('"',"").split(",")
+def convert_to_list(target):
+
+  try: 
+    target = json.loads(target)
+    target = target.replace("['", "").replace("']","").replace("',",",").replace(",'",",").split(',')
+    return target 
+  except ValueError: 
+    target = target.encode('UTF8')
+    target = target.replace('[',"").replace("']","").replace("u'","").replace("',","").split(" ")
+    return target
+  
+  
+  

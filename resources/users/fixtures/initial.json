@@ -14,7 +14,6 @@
         "email": "admin@bespoke.is",
         "date_joined": "2015-07-06T19:36:41.626Z"
     },
-    "model": "auth.user",
-    "pk": 1
+    "model": "auth.user"
 }
 ]

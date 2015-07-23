@@ -7,7 +7,7 @@ import json
 
 class UserTests_v2(APITestCase):
 
-  fixtures = ['users.json','snippets.json']
+  fixtures = ['test.json']
 
   def setUp(self):
     self.client.login(username='admin', password='testtest')
@@ -63,7 +63,7 @@ class UserTests_v2(APITestCase):
     url = reverse('api:v2:snippet_relationships', args=[1])
     response = json.loads(self.client.get(url, format='json').content)
     relationships = response['data']
-    self.assertEqual(relationships[0]['type'], "snippets")
+    self.assertEqual(relationships[0]['model_type'], "snippets")
     self.assertEqual(len(relationships), 10)
 
   def test_show_included_object(self):

@@ -212,6 +212,14 @@ The example code structure is based on 4 components
         manage.py syncdb 
 
 
+- Creating a fixture if you’ve already got some data
+        
+        manage.py dumpdata {resource name} > resources/{resource name}/fixtures/{initial or test}.json
+
+- Loading a fixture data
+
+        manage.py loaddata initial
+
 
 ## Testing
 

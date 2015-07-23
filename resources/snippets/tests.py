@@ -8,7 +8,7 @@ import json
 
 class SnippetTests_v2(APITestCase):
 
-  fixtures = ['users.json','snippets.json']
+  fixtures = ['test.json']
 
   def setUp(self):
     self.client.login(username='admin', password='testtest')
@@ -23,7 +23,7 @@ class SnippetTests_v2(APITestCase):
     response = self.client.get(url, format='json')
     # print response
     length = len(response.data['results'])
-    self.assertEqual(length, 10)
+    self.assertEqual(length, 9)
 
   def test_create_snippet(self):
     """
